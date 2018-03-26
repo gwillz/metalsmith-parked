@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-parked",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Conditional parked page for quick deploys with metalsmith",
   "main": "index.js",
   "repository": {
