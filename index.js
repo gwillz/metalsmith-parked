@@ -14,17 +14,17 @@ module.exports = function parked(options) {
     }, options)
     
     if (!options.enable) {
-        rmAll(path.resolve(__dirname, options.path, PARKED))
+        rmAll(path.resolve(options.path, PARKED))
     }
     else {
         console.log(`replacing [${INDEX}] with [${PARKED}]`)
         fs.renameSync(
-            path.resolve(__dirname, options.path, PARKED),
-            path.resolve(__dirname, options.path, INDEX))
+            path.resolve(options.path, PARKED),
+            path.resolve(options.path, INDEX))
         
         console.log('removing park files')
         options.remove.forEach(pattern => {
-            glob.sync(path.resolve(__dirname, options.path, pattern))
+            glob.sync(path.resolve(options.path, pattern))
             .forEach(p => {
                 console.log(`remove: [${p}]`)
                 rmAll(p)
@@ -40,7 +40,7 @@ function rmAll(target) {
     catch (err) {
         if (err && err.code === 'EISDIR') {
             fs.readdirSync(target).forEach(file => {
-                rmAll(path.resolve(__dirname, target, file))
+                rmAll(path.resolve(target, file))
             })
             fs.rmdirSync(target)
         }
