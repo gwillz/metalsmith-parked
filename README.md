@@ -11,9 +11,10 @@ It's not really a plugin, just poke it in the `build()` callback.
 ## Defaults
 
 ```yaml
-path: public    # metalsmith destination directory
-enable: true    # true - replace index.html, false - remove parked.html
-remove: []      # glob patterns to remove
+enable: false         # true - replace index, false - remove parked
+parked: 'parked.html' # replacement file for index
+index: 'index.html'   # target index file
+remove: []            # glob patterns to remove
 ```
 
 
@@ -25,17 +26,16 @@ const isParked = process.argv.includes('parked')
 
 Metalsmith(__dirname)
 .use(etc...)
+.use(parked({
+    enable: isParked,
+    remove: [
+        '*.pdf',
+        'blog/',
+        'img/',
+    ]
+}))
 .build(err => {
     if (err) throw err;
-    
-    parked({
-        enable: isParked,
-        remove: [
-            '*.pdf',
-            'blog/',
-            'img/',
-        ]
-    })
 })
 ```
 

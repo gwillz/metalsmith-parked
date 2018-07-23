@@ -10,6 +10,6 @@
   "author": "Gwilyn Saunders",
   "license": "GPL-3.0",
   "dependencies": {
-    "glob": "^7.1.2"
+    "multimatch": "^2.1.0"
   }
 }
