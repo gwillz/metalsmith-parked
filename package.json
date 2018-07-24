@@ -7,9 +7,18 @@
     "type": "git",
     "url": "github.com/gwillz/metalsmith-parked"
   },
+  "scripts": {
+      "test": "nyc tape test.js | tap-spec"
+  },
   "author": "Gwilyn Saunders",
   "license": "GPL-3.0",
   "dependencies": {
     "multimatch": "^2.1.0"
+  },
+  "devDependencies": {
+    "metalsmith": "^2.3.0",
+    "nyc": "^12.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
   }
 }
