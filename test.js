@@ -13,11 +13,16 @@ test("Parked enabled", assert => {
     .build((err, files) => {
         if (err) assert.fail(err);
         
-        assert.ok(files['index.html']);
-        assert.notOk(files['other.html']);
-        assert.notOk(files['parked.html']);
+        assert.ok(files['index.html'], 'should build [index.js]');
+        assert.notOk(files['other.html'], 'should _not_ build [other.js]');
+        assert.notOk(files['parked.html'], 'should _never_ build [parked.js]');
+        
+        const actual = files['index.html'].contents.toString();
+        const expected = fs.readFileSync('./test/src/index.html', 'utf-8');
+        
+        assert.equal(actual, expected, '[parked.html] is renamed as [index.html]');
+        assert.end();
     })
-    assert.end();
 })
 
 test("Parked disabled", assert => {
@@ -28,14 +33,21 @@ test("Parked disabled", assert => {
     .build((err, files) => {
         if (err) assert.fail(err);
         
-        assert.ok(files['index.html']);
-        assert.ok(files['other.html']);
-        assert.notOk(files['parked.html']);
+        assert.ok(files['index.html'], 'should build [index.js]');
+        assert.ok(files['other.html'], 'should build [other.js]');
+        assert.notOk(files['parked.html'], 'should _never_ build [parked.js]');
+        
+        
+        const actual = files['index.html'].contents.toString();
+        const expected = fs.readFileSync('./test/src/index.html', 'utf-8');
+        
+        assert.equal(actual, expected, 'output and input [index.html] are the same');
+        assert.end();
     })
-    assert.end();
 })
 
 
+// shorthand for creating a metalsmith build script with our plugin
 function create(options) {
     return new Metalsmith(path.resolve(__dirname, 'test/'))
     .clean(true)
