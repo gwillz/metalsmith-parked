@@ -1,12 +1,13 @@
 Metalsmith Parked
 =================
 
-A crude solution for processing parked pages in Metalsmith.
+A cheap solution for parked pages in Metalsmith, without having to 
+maintain a separate build script.
+
 The plugin replaces the index file with a provided alternative `parked.html`.
 It will also clean out any other pages that you don't want the parked site
 to see.
 
-It's not really a plugin, just poke it in the `build()` callback.
 
 ## Defaults
 
