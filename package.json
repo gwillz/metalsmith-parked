@@ -1,18 +1,18 @@
 {
-  "name": "metalsmith-parked",
-  "version": "1.0.1",
-  "description": "Conditional parked page for quick deploys with metalsmith",
+  "name": "@goodthnx/metalsmith-parked",
+  "version": "2.0.1",
+  "description": "Conditional parked page for quick deploys with Metalsmith.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "github.com/gwillz/metalsmith-parked"
+    "url": "bitbucket.org/goodthnx/metalsmith-parked"
   },
   "scripts": {
       "prepare": "true",
       "test": "nyc tape test.js | tap-spec"
   },
   "author": "Gwilyn Saunders",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "dependencies": {
     "multimatch": "^2.1.0"
   },
