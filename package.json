@@ -6,7 +6,7 @@
   "types": "build/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "bitbucket.org/goodthnx/metalsmith-parked"
+    "url": "github.com/gwillz/metalsmith-parked"
   },
   "scripts": {
     "prepack": "tsc",

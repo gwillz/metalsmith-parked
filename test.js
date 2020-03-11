@@ -3,7 +3,7 @@ const test = require('tape')
 const path = require('path')
 const fs = require('fs')
 const Metalsmith = require('metalsmith')
-const parked = require('./index')
+const parked = require('./build/index')
 
 test("Parked enabled", assert => {
     create({
