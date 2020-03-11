@@ -14,12 +14,13 @@
   "author": "Gwilyn Saunders",
   "license": "MIT",
   "dependencies": {
-    "multimatch": "^2.1.0"
+    "multimatch": "^4.0.0"
   },
   "devDependencies": {
     "metalsmith": "^2.3.0",
     "nyc": "^15.0.0",
     "tap-spec": "^5.0.0",
-    "tape": "^4.9.1"
+    "tape": "^4.9.1",
+    "typescript": "^3.8.3"
   }
 }
