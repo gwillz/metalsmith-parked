@@ -4,6 +4,16 @@
   "description": "Conditional parked page for quick deploys with Metalsmith.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "keywords": [
+    "metalsmith",
+    "parked",
+    "static",
+    "plugin"
+  ],
+  "files": [
+    "build",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "github.com/gwillz/metalsmith-parked"
