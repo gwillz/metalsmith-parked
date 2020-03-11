@@ -8,8 +8,8 @@
     "url": "bitbucket.org/goodthnx/metalsmith-parked"
   },
   "scripts": {
-      "prepare": "true",
-      "test": "nyc tape test.js | tap-spec"
+    "prepare": "true",
+    "test": "nyc tape test.js | tap-spec"
   },
   "author": "Gwilyn Saunders",
   "license": "MIT",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "metalsmith": "^2.3.0",
-    "nyc": "^12.0.2",
+    "nyc": "^15.0.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
   }
